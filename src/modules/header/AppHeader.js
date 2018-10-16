@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./appheader.css";
+import logo from "../../assets/images/Anarock-logo.svg";
 
 class AppHeader extends Component {
   render() {
@@ -7,7 +8,7 @@ class AppHeader extends Component {
       <header className="wrapper">
         <div className="container">
           <a href="javascript:void(0)" className="logoWrap">
-            <img src="images/Anarock-logo.svg" alt="" />
+            <img src={logo} alt="" />
           </a>
           <nav>
             <div className="wrapper firstNav">
@@ -169,13 +170,21 @@ class AppHeader extends Component {
               </ul>
             </div>
           </nav>
-          <a className="hamburger" href="javascript:void(0)">
+          <a
+            className="hamburger"
+            href="javascript:void(0)"
+            onClick={this.burgerMenuClick}
+          >
             <span />
           </a>
         </div>
       </header>
     );
   }
+  burgerMenuClick = event => {
+    document.querySelector(".hamburger").classList.toggle("active");
+    document.querySelector("ul.mobileNav").classList.toggle("open");
+  };
 }
 
 export default AppHeader;

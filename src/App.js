@@ -7,6 +7,7 @@ import AppHeader from "./modules/header/AppHeader";
 import Banner from "./modules/banner/Banner";
 import MainContent from "./modules/maincontent/MainComponent";
 import AppFooter from "./modules/footer/AppFooter";
+import "./assets/css/main.css";
 
 class App extends Component {
   render() {

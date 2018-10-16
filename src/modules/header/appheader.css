@@ -582,7 +582,7 @@ header {
           width: 100%;
           position: fixed;
           top: 40px;
-          right: -100%;
+          right: -115%;
           height: calc(100vh - 40px);
           background-color: #fff;
           overflow: auto;
