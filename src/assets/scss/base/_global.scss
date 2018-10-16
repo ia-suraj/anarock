@@ -62,7 +62,7 @@ p{font-size: 16px; line-height: 24px; font-family: $font-source; color: $black;}
 }
 .slick-dotted.slick-slider{margin: 0;}
 
-.arrowBtn{width: 28px; height: 14px; background-image: url(../images/rightArrow.png); background-repeat: no-repeat; display: inline-block;}
+.arrowBtn{width: 28px; height: 14px; /* background-image: url(~assets/images/rightArrow.png) */; background-repeat: no-repeat; display: inline-block;}
 
 .knowmore_Btn{width: 80px; position: relative; top: 0; transform: none; right:0; background-color:$orange; color: $white; padding: 10px 10px 42px; display: inline-block;
     span{width: 100%; float: left; text-align: center; font-family: $font-ceraMedium; font-size:16px;
