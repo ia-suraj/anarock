@@ -26,7 +26,11 @@
         }
         .slick-dots{bottom: 10px; z-index: 2; width: auto; right: 10%; left: auto; bottom: 20px;
             li{width: 16px; height: 16px; float: left; margin: 0 4px; padding: 0; float: left; background-color: $orange; border-radius: 50%; @extend .anim2;
-                button{display: none;}
+                button{padding:0px;
+                }
+                button:before{
+                        content:" " !important;
+                    }
                 &.slick-active, &:hover{background-color: #d0d0d0;}
             }
         }

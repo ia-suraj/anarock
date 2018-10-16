@@ -1,53 +1,61 @@
 import React, { Component } from "react";
 import "./Banner.css";
 import $ from "jquery";
+import banner from "../../assets/images/banner.jpg";
+import banner2 from "../../assets/images/banner2.jpg";
+
+import Slider from "react-slick";
+
+const bannerdetails = [
+  {
+    id: 1,
+    name: "Values over value",
+    detail:
+      "Ethics, Integrity, Transparency, Trust and Respect is our core belief.",
+    img_src: banner
+  },
+  {
+    id: 1,
+    name: "Values over value",
+    detail:
+      "Ethics, Integrity, Transparency, Trust and Respect is our core belief. Ethics, Integrity, Transparency, Trust and Respect is our core belief.",
+    img_src: banner2
+  }
+];
 
 class Banner extends Component {
   render() {
+    var settings = {
+      dots: true,
+      infinite: true,
+      arrows: false,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true
+    };
     return (
       <section className="wrapper topBanner">
-        <div className="wrapper topBannerSlider">
-          <div className="wrapper colWrap">
-            <img src="images/banner.jpg" alt="" className="bannerDesktopImg" />
-            <div className="container">
-              <div className="contentBox">
-                <h1 className="h1">Values over value</h1>
-                <p>
-                  Ethics, Integrity, Transparency, Trust and Respect is our core
-                  belief.
-                </p>
-                <a href="javascript:void(0)" className="knowmore_Btn">
-                  <span>Know</span>
-                  <span>More</span>
-                  <span>
-                    <abbr className="plusWrap" />
-                  </span>
-                </a>
+        <Slider className="wrapper topBannerSlider" {...settings}>
+          {bannerdetails.map(b => (
+            <div className="wrapper colWrap" key={b.id}>
+              <img src={b.img_src} alt="" className="bannerDesktopImg" />
+              <div className="container">
+                <div className="contentBox">
+                  <h1 className="h1">{b.name}</h1>
+                  <p>{b.detail}</p>
+                  <a href="javascript:void(0)" className="knowmore_Btn">
+                    <span>Know</span>
+                    <span>More</span>
+                    <span>
+                      <abbr className="plusWrap" />
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="wrapper colWrap">
-            <img src="images/banner2.jpg" alt="" className="bannerDesktopImg" />
-            <div className="container">
-              <div className="contentBox">
-                <h1 className="h1">Values over value Values over value</h1>
-                <p>
-                  Ethics, Integrity, Transparency, Trust and Respect is our core
-                  belief. Ethics, Integrity, Transparency, Trust and Respect is
-                  our core belief.
-                </p>
-                <a href="javascript:void(0)" className="knowmore_Btn">
-                  <span>Know</span>
-                  <span>More</span>
-                  <span>
-                    <abbr className="plusWrap" />
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+          ))}
+        </Slider>
 
         <em className="horizontalLine firstLine" />
         <em className="horizontalLine secondLine" />
@@ -58,7 +66,6 @@ class Banner extends Component {
       </section>
     );
   }
-  componentDidMount() {}
 }
 
 export default Banner;

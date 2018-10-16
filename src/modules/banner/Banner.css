@@ -401,7 +401,9 @@ p {
       background-color: #f27060;
       border-radius: 50%; }
       .topBanner .topBannerSlider .slick-dots li button {
-        display: none; }
+        padding: 0px; }
+      .topBanner .topBannerSlider .slick-dots li button:before {
+        content: " " !important; }
       .topBanner .topBannerSlider .slick-dots li.slick-active, .topBanner .topBannerSlider .slick-dots li:hover {
         background-color: #d0d0d0; }
   .topBanner .horizontalLine {
