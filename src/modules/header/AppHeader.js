@@ -5,7 +5,7 @@ import logo from "../../assets/images/Anarock-logo.svg";
 class AppHeader extends Component {
   render() {
     return (
-      <header className="wrapper">
+      <header className="wrapper" ref="navbar">
         <div className="container">
           <a href="javascript:void(0)" className="logoWrap">
             <img src={logo} alt="" />

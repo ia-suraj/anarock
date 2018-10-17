@@ -1,5 +1,4 @@
 /* color variables */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +42,7 @@ img {
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out; }
 
-.anim2, .videoPopupWrapper, .videoPopupWrapper .popupVideo .closeVideo {
+.anim2, .videoPopupWrapper, .videoPopupWrapper .popupVideo .closeVideo, .socialFeed_LifeAt .lifeAt .video_Main .playIcon:after {
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -169,14 +168,14 @@ p {
 .marginTop80 {
   margin-top: 80px; }
 
-.marginBottom80 {
+.marginBottom80, .socialFeed_LifeAt .h2 {
   margin-bottom: 80px; }
 
 .marginTopBottom80 {
   margin-top: 80px;
   margin-bottom: 80px; }
 
-.marginBottom50 {
+.marginBottom50, .socialFeed_LifeAt .socialFeeds .twitterIcon_FollowBtn, .socialFeed_LifeAt .socialFeeds .tweetBox .twitData .colWrap {
   margin-bottom: 50px; }
 
 .marginTop50 {
@@ -313,22 +312,111 @@ p {
       height: 100%; }
 
 /* video popup end here */
-@font-face {
-  font-family: 'CeraMedium';
-  src: url("../fonts/CeraMedium.eot");
-  src: url("../fonts/CeraMedium.eot") format("embedded-opentype"), url("../fonts/CeraMedium.woff2") format("woff2"), url("../fonts/CeraMedium.woff") format("woff"), url("../fonts/CeraMedium.ttf") format("truetype"), url("../fonts/CeraMedium.svg#CeraMedium") format("svg"); }
-@font-face {
-  font-family: 'CeraRegular';
-  src: url("../fonts/CeraRegular.eot");
-  src: url("../fonts/CeraRegular.eot") format("embedded-opentype"), url("../fonts/CeraRegular.woff2") format("woff2"), url("../fonts/CeraRegular.woff") format("woff"), url("../fonts/CeraRegular.ttf") format("truetype"), url("../fonts/CeraRegular.svg#CeraRegular") format("svg"); }
-/* @import "component/_header";
-@import "component/_footer";
-@import "component/_topBanner";
-@import "component/_services";
-@import "component/_bigfeaturedNews";
-@import "component/_researchInsights";
-@import "component/_projects";
-@import "component/_partnersTestimonials";
-@import "component/_socialFeedsLifeAt"; */
+/* social feeds and life at anarock start here */
+.socialFeed_LifeAt {
+  position: relative; }
+  .socialFeed_LifeAt .socialFeeds {
+    width: 38%;
+    float: left;
+    padding-left: 8%; }
+    .socialFeed_LifeAt .socialFeeds .twitterIcon_FollowBtn .iconTwit {
+      float: left; }
+    .socialFeed_LifeAt .socialFeeds .twitterIcon_FollowBtn .followBtn {
+      float: right;
+      width: 96px;
+      font-size: 16px;
+      font-family: "CeraMedium";
+      background-color: #f27060;
+      padding: 6px 10px;
+      text-align: center;
+      color: #ffffff; }
+    .socialFeed_LifeAt .socialFeeds .tweetBox {
+      height: 320px; }
+      .socialFeed_LifeAt .socialFeeds .tweetBox .twitData {
+        overflow: auto;
+        padding: 10px; }
+        .socialFeed_LifeAt .socialFeeds .tweetBox .twitData .colWrap .imgWrap {
+          width: 72px;
+          float: left;
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
+          position: relative;
+          top: 5px; }
+        .socialFeed_LifeAt .socialFeeds .tweetBox .twitData .colWrap p {
+          width: calc(100% - 80px);
+          float: left;
+          padding: 0 0 0 20px; }
+          .socialFeed_LifeAt .socialFeeds .tweetBox .twitData .colWrap p .twitName {
+            float: left;
+            text-align: left; }
+          .socialFeed_LifeAt .socialFeeds .tweetBox .twitData .colWrap p .twitTime {
+            float: left;
+            text-align: right;
+            padding-left: 10px; }
+          .socialFeed_LifeAt .socialFeeds .tweetBox .twitData .colWrap p abbr {
+            width: 100%;
+            float: left; }
+    .socialFeed_LifeAt .socialFeeds .mCSB_scrollTools .mCSB_dragger {
+      max-height: 30px !important; }
+    .socialFeed_LifeAt .socialFeeds .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+      background-color: #f27060; }
+    .socialFeed_LifeAt .socialFeeds .mCSB_scrollTools .mCSB_draggerRail {
+      background-color: #b5b5b5; }
+    .socialFeed_LifeAt .socialFeeds .mCSB_scrollTools {
+      opacity: 1;
+      width: 4px; }
+  .socialFeed_LifeAt .lifeAt {
+    width: calc(62% - 7%);
+    margin-left: 7%;
+    float: left;
+    position: relative; }
+    .socialFeed_LifeAt .lifeAt .video_Main {
+      width: 60%;
+      float: left;
+      position: relative; }
+      .socialFeed_LifeAt .lifeAt .video_Main .playIcon {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 50%; }
+        .socialFeed_LifeAt .lifeAt .video_Main .playIcon img {
+          position: absolute;
+          top: 50%;
+          left: 54%;
+          transform: translate(-50%, -50%); }
+        .socialFeed_LifeAt .lifeAt .video_Main .playIcon:after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: #f27060;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transform: scale(1); }
+        .socialFeed_LifeAt .lifeAt .video_Main .playIcon:hover:after {
+          transform: scale(0); }
+      .socialFeed_LifeAt .lifeAt .video_Main .knowmore_Btn {
+        position: absolute;
+        right: 20px;
+        bottom: -30px;
+        top: auto; }
+      .socialFeed_LifeAt .lifeAt .video_Main .videoBg {
+        width: 100%; }
+    .socialFeed_LifeAt .lifeAt:after {
+      content: '';
+      width: 50%;
+      height: 60%;
+      background-color: #a054a0;
+      position: absolute;
+      top: 16%;
+      right: 0;
+      z-index: -1; }
 
-/*# sourceMappingURL=main.css.map */
+/* social feeds and life at anarock end here */
+
+/*# sourceMappingURL=Social.css.map */

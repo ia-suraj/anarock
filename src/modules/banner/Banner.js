@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Banner.css";
-import $ from "jquery";
 import banner from "../../assets/images/banner.jpg";
 import banner2 from "../../assets/images/banner2.jpg";
 
@@ -24,6 +23,24 @@ const bannerdetails = [
 ];
 
 class Banner extends Component {
+  constructor() {
+    super();
+    this.state = {
+      bannerdetails: []
+    };
+  }
+
+  /* componentDidMount() {
+    fetch(url)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        that.setState({ bannerdetails: data });
+      });
+  }
+ */
   render() {
     var settings = {
       dots: true,

@@ -1,0 +1,47 @@
+@import "../../assets/scss/base/mixins";
+@import "../../assets/scss/base/_variables";
+@import "../../assets/scss/base/_global";
+/* social feeds and life at anarock start here */
+.socialFeed_LifeAt{position: relative;
+    .h2{@extend .marginBottom80;}
+    .socialFeeds{width: 38%; float: left; padding-left: 8%;
+        .twitterIcon_FollowBtn{@extend .marginBottom50;
+            .iconTwit{float: left;}
+            .followBtn{float: right; width: 96px; font-size: 16px; font-family: $font-ceraMedium; background-color: $orange; padding:6px 10px; text-align: center; color: $white;}
+        }
+        .tweetBox{
+            height: 320px;
+
+            .twitData{overflow: auto; padding: 10px;
+                .colWrap{@extend .marginBottom50;
+                    .imgWrap{width: 72px; float: left; box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.1); position: relative; top: 5px;}
+                    p{width: calc(100% - 80px); float: left; padding:0 0 0 20px;
+                        .twitName{float: left; text-align: left;}
+                        .twitTime{float: left; text-align: right; padding-left: 10px;}
+                        abbr{width: 100%; float: left;}
+                    }
+                }
+            }
+        }
+        .mCSB_scrollTools .mCSB_dragger{max-height: 30px !important;}
+        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{background-color: $orange;}
+        .mCSB_scrollTools .mCSB_draggerRail{background-color: #b5b5b5;}
+        .mCSB_scrollTools{opacity: 1; width: 4px;}
+        
+    }
+    .lifeAt{width:calc(62% - 7%); margin-left: 7%; float: left; position: relative;
+        .video_Main{width: 60%; float: left; position: relative;
+            .playIcon{width: 50px; height: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); overflow: hidden; cursor: pointer; border-radius: 50%;   
+                img{position: absolute; top: 50%; left: 54%; transform: translate(-50%,-50%);}
+                &:after{content: ''; width: 100%; height: 100%; background-color: $orange; position: absolute; top: 0; left: 0; z-index: -1; transform: scale(1); @extend .anim2;}
+                &:hover{
+                    &:after{transform: scale(0);}
+                }
+            }
+            .knowmore_Btn{position: absolute; right: 20px; bottom: -30px; top: auto;}
+            .videoBg{width: 100%;}
+         }
+        &:after{content: ''; width: 50%; height: 60%; background-color:$colora054a0; position: absolute; top: 16%; right: 0; z-index: -1;}
+    }
+}
+/* social feeds and life at anarock end here */

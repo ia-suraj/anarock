@@ -1,5 +1,4 @@
 /* color variables */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
 * {
   margin: 0;
   padding: 0;
@@ -176,7 +175,7 @@ p {
   margin-top: 80px;
   margin-bottom: 80px; }
 
-.marginBottom50 {
+.marginBottom50, .projectsWrap .h2 {
   margin-bottom: 50px; }
 
 .marginTop50 {
@@ -313,22 +312,75 @@ p {
       height: 100%; }
 
 /* video popup end here */
-@font-face {
-  font-family: 'CeraMedium';
-  src: url("../fonts/CeraMedium.eot");
-  src: url("../fonts/CeraMedium.eot") format("embedded-opentype"), url("../fonts/CeraMedium.woff2") format("woff2"), url("../fonts/CeraMedium.woff") format("woff"), url("../fonts/CeraMedium.ttf") format("truetype"), url("../fonts/CeraMedium.svg#CeraMedium") format("svg"); }
-@font-face {
-  font-family: 'CeraRegular';
-  src: url("../fonts/CeraRegular.eot");
-  src: url("../fonts/CeraRegular.eot") format("embedded-opentype"), url("../fonts/CeraRegular.woff2") format("woff2"), url("../fonts/CeraRegular.woff") format("woff"), url("../fonts/CeraRegular.ttf") format("truetype"), url("../fonts/CeraRegular.svg#CeraRegular") format("svg"); }
-/* @import "component/_header";
-@import "component/_footer";
-@import "component/_topBanner";
-@import "component/_services";
-@import "component/_bigfeaturedNews";
-@import "component/_researchInsights";
-@import "component/_projects";
-@import "component/_partnersTestimonials";
-@import "component/_socialFeedsLifeAt"; */
+/* projects start here */
+.projectsWrap {
+  position: relative;
+  z-index: 2; }
+  .projectsWrap .projectType {
+    background-color: rgba(112, 112, 112, 0.8);
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 6px 16px; }
+  .projectsWrap .overlapContent {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 100%;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px; }
+    .projectsWrap .overlapContent .h2 {
+      font-size: 18px;
+      line-height: 26px;
+      margin: 0;
+      color: #a054a0; }
+    .projectsWrap .overlapContent p {
+      margin: 0 0 8px;
+      width: calc(100% - 40px);
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 10px; }
+    .projectsWrap .overlapContent .arrowBtn {
+      float: none;
+      display: inline-block;
+      vertical-align: middle; }
+  .projectsWrap .projectImg {
+    width: 100%; }
+  .projectsWrap .colWrap40 {
+    width: calc(40% - 20px);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative; }
+    .projectsWrap .colWrap40 .overlapContent {
+      width: 80%; }
+      .projectsWrap .colWrap40 .overlapContent .h2 {
+        font-size: 24px;
+        line-height: 32px; }
+  .projectsWrap .colWrap20 {
+    width: calc(20% - 17px);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    position: relative; }
+    .projectsWrap .colWrap20:last-child {
+      margin-right: 0; }
+  .projectsWrap:after {
+    content: '';
+    width: 100%;
+    height: 36%;
+    position: absolute;
+    left: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: #a054a0;
+    z-index: -1; }
 
-/*# sourceMappingURL=main.css.map */
+/* projects end here */
+
+/*# sourceMappingURL=Project.css.map */
