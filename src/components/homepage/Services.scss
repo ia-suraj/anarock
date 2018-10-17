@@ -1,0 +1,62 @@
+@import "../../assets/scss/base/mixins";
+@import "../../assets/scss/base/_variables";
+@import "../../assets/scss/base/_global";
+@import "scss/base/_fonts";
+
+/* services start here */
+.servicesWrap{position: relative; z-index: 2;
+    .h2{width: 100%; float: left; text-transform: none;}
+    .innerServiceWrap{
+        .servicesList{width:30%; display: inline-block; vertical-align: middle; position: relative; z-index: 2;
+            .h2{position: absolute; top:-100px; left: 26%; text-transform: uppercase;}
+            .innerList{padding: 20px 0 20px 26%; background-color: $colora054a0; position: relative;
+                ul{width: 100%; max-width: 290px;
+                    li{width: 100%; float:left; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); 
+                        a{width: 100%; float: left; opacity: 0.2; @extend .anim2;
+                            img{display: inline-block; vertical-align: middle;}
+                            span{font-size: 18px; line-height: 26px; text-transform: uppercase; font-family: $font-ceraRegular; color: $white; display: inline-block; vertical-align: middle; padding-left: 20px;}
+                        }
+                        &:last-child{border: 0;}
+                        &.active, &:hover{
+                            a{opacity: 1;}
+                        }
+                    }
+                }
+                &:after{content:''; width: 50px; height: 100%; position: absolute; top: 0; right: -50px; background-color:$colora054a0;}
+            }
+        }
+        .servicesColumn{width:calc(70% - 4px); vertical-align: middle; display: none;
+            &.active{display: inline-block;}
+            .colWrap{width: 50%; float: left; position:relative; overflow: hidden; border: 1px solid $white;
+                .serviceImg{width: 100%;}
+                .overlayBlack{width: 100%; height: 100%; background-color: $black; opacity: 0.3; position: absolute; top: 0; left: 0;}
+                .stripContent{color: $white; width: auto; padding: 10px 20px; background-color: rgba(99,27,117,0.8); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-transform: uppercase; @extend .anim2;}
+                .overlapContent{background-color: rgba(99,27,117,0.5); width: 100%; height: 0%; position: absolute; bottom:0; left: 0; @extend .anim2; opacity: 0; visibility: hidden;
+                    .innerWrap{width: 70%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;
+                        h3{text-transform:uppercase; margin: 10px 0 12px; width: 100%; float: left;}
+                        p{color: $white;}
+                        .arrowBtn{width: 28px; height: 14px; background-image: url(../../assets/images/rightArrow.png); background-repeat: no-repeat; display: inline-block; margin: 40px 0 0;}
+                    }
+                }
+                .orangeOverlayContent{width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(242,112,96,0.8);
+                    .innerContent{width: 70%; height: auto; position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); text-align: center;
+                        abbr{font-family: $font-ceraMedium; color: $white; font-size: 16px;}
+                        .plusWrap{width: 12px; height: 12px; position: absolute; top: 40px; left: 50%; transform: translate(-50%, -50%); cursor: pointer;
+                            &:before{content:''; width: 2px; height: 100%; background-color:$white; position: absolute; top:0; left: 50%; transform: translateX(-50%); transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;}
+                            &:after{content:''; width: 100%; height: 2px; background-color:$white; position: absolute; top: 50%; transform: translateY(-50%); left: 0;}
+                                &.minusWrap{
+                                    &:before{transform: translateX(-50%) rotate(90deg); }
+                                }
+                        }
+                    }
+                }
+                &:hover{
+                    .stripContent{opacity: 0; visibility: hidden;}
+                    .overlapContent{opacity: 1; visibility: visible; height: 100%;}
+                }
+                 
+            }
+        }
+    }
+}
+/* services end here */
