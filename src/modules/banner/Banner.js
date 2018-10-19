@@ -83,6 +83,11 @@ class Banner extends Component {
       </section>
     );
   }
+  componentDidMount() {
+    document.querySelector(".downArrow").addEventListener("click", function(e) {
+      console.log(e);
+    });
+  }
 }
 
 export default Banner;

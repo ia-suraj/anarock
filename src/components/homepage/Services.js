@@ -65,7 +65,7 @@ export default class Services extends Component {
     return (
       <section className="wrapper servicesWrap">
         <div className="container">
-          <h2 className="h2 marginTopBottom80">{this.state.services_intro}</h2>
+          <h2 className="h2 marginTopBottom80">{this.state.service_intro}</h2>
         </div>
         <div className="wrapper innerServiceWrap">
           <div className="servicesList">
