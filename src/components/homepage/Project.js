@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./Project.css";
+/* import "./Project.css"; */
 
 import project1 from "../../assets/images/project1.jpg";
 import project2 from "../../assets/images/project2.jpg";

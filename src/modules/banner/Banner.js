@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Banner.css";
+/* import "./Banner.css"; */
 import banner from "../../assets/images/banner.jpg";
 import banner2 from "../../assets/images/banner2.jpg";
 

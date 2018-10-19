@@ -77,11 +77,14 @@ p{font-size: 16px; line-height: 24px; font-family: $font-source; color: $black;}
 }
 
 
-
 /* video popup start here */
-.videoPopupWrapper{position: fixed; z-index:3; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); transform: scale(0, 1); @extend .anim2;
+.videoPopupWrapper{position: fixed; z-index:5; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); transform: scale(0, 1); @extend .anim2;
     &.active{transform: scale(1, 1);}
     .popupVideo{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 750px; max-height: 100%; height: 480px; padding: 10px 0 20px 0; background: rgba(0,0,0,0.9);
+        #iframeVideo{
+            width: 100%;
+            height: 100%;
+        }
         .closeVideo{display: block; position: absolute; right:-32px; top:-4px; width: 32px; height: 32px; @extend .anim2; cursor: pointer;
             &:hover{transform: rotate(180deg);}
             &:before {content: ""; position: absolute; display: block; margin: auto; left: 0; right: 0; top: 0; bottom: 0; width: 32px; height: 0; border-top: 2px solid $white; transform: rotate(45deg); transform-origin: center;}

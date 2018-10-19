@@ -1,7 +1,3 @@
-@import "../../assets/scss/base/mixins";
-@import "../../assets/scss/base/_variables";
-@import "../../assets/scss/base/_global";
-
 /* big and featured news start here */
 .big_featured_News{position: relative; z-index: 2;
     .bigNews{width: 40%; float: left; padding-right: 50px;
@@ -30,7 +26,7 @@
             }
         }
         .knowmore_Btn{float: right; @extend .marginTop50;}
-        &:after{content: ''; width: 108%; height: 1px; background-color: #c2c2c2; position: absolute; bottom: 20px; left: -15%; z-index: -1;}
+        &:after{content: ''; width: 108%; height: 1px; background-color: #c2c2c2; position: absolute; bottom: 40px; left: -15%; z-index: -1;}
     }
 }
 .slick-dots li button:before{

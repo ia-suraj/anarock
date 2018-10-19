@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Services.css";
+/* import "./Services.css"; */
 import icon1 from "../../assets/images/Residential.png";
 import icon2 from "../../assets/images/Investment_Management.png";
 import icon3 from "../../assets/images/Investment_Management.png";
@@ -75,20 +75,14 @@ export default class Services extends Component {
                 {servicelist.map((s, index) => {
                   return index === 0 ? (
                     <li className="showSingle active" target={s.id} key={s.id}>
-                      <a
-                        href="javascript:void(0)"
-                        onClick={this._handleClick.bind(this, s.name)}
-                      >
+                      <a href="javascript:void(0)" className="service_type">
                         <img src={s.img_src} alt="" />
                         <span>{s.name}</span>
                       </a>
                     </li>
                   ) : (
                     <li className="showSingle" target={s.id} key={s.id}>
-                      <a
-                        href="javascript:void(0)"
-                        onClick={this._handleClick.bind(this, s.name)}
-                      >
+                      <a href="javascript:void(0)" className="service_type">
                         <img src={s.img_src} alt="" />
                         <span>{s.name}</span>
                       </a>
@@ -131,7 +125,16 @@ export default class Services extends Component {
       </section>
     );
   }
-  _handleClick = (name, event) => {
-    console.log(name);
-  };
+
+  componentDidMount() {
+    var service_type_links = document.querySelectorAll(".showSingle");
+    service_type_links.forEach(function(i, idx) {
+      i.addEventListener("click", function() {
+        service_type_links.forEach(function(item, e) {
+          item.classList.remove("active");
+        });
+        this.classList.add("active");
+      });
+    });
+  }
 }

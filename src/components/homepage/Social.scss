@@ -1,7 +1,3 @@
-@import "../../assets/scss/base/mixins";
-@import "../../assets/scss/base/_variables";
-@import "../../assets/scss/base/_global";
-/* social feeds and life at anarock start here */
 .socialFeed_LifeAt{position: relative;
     .h2{@extend .marginBottom80;}
     .socialFeeds{width: 38%; float: left; padding-left: 8%;

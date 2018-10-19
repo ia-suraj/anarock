@@ -13,16 +13,16 @@
 // All Components
 // ----------------------------------------------------------------------
 
-
-/* @import "component/_header";
-@import "component/_footer";
-@import "component/_topBanner";
-@import "component/_services";
-@import "component/_bigfeaturedNews";
-@import "component/_researchInsights";
-@import "component/_projects";
-@import "component/_partnersTestimonials";
-@import "component/_socialFeedsLifeAt"; */
+@import "../../components/homepage/News";
+@import "../../components/homepage/Partners";
+@import "../../components/homepage/Project";
+@import "../../components/homepage/Research";
+@import "../../components/homepage/Services";
+@import "../../components/homepage/Social";
+@import "../../modules/banner/Banner";
+@import "../../modules/footer/AppFooter";
+@import "../../modules/header/appheader";
+@import "../../modules/maincontent/MainContent";
 
     
 

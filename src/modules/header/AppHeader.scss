@@ -1,11 +1,14 @@
-@import "../../assets/scss/base/mixins";
-@import "../../assets/scss/base/_variables";
-@import "../../assets/scss/base/_global";
-/* @import "scss/base/_fonts"; */ 
 /* header start here */
 
 .arrowBtn{width: 28px; height: 14px; background-image: url(../../assets/images/rightArrow.png) !important }; 
 header{position: fixed; top: 0; left: 0; background-color: transparent; padding: 18px 0 0; z-index:4;/*  display: none; */
+    &.sticky-header{
+        background-color: white !important;
+        
+        .container{
+            padding: 0px 15px 5px;
+        }
+    }
     .logoWrap{width: 220px; float: left; padding-top: 12px;}
     nav{width:calc(100% - 220px); float: right; font-family: $font-ceraRegular;
         .firstNav{
@@ -62,7 +65,7 @@ header{position: fixed; top: 0; left: 0; background-color: transparent; padding:
                             &:before{transform: translateX(-50%) rotate(90deg); }
                         }
                     }
-                     
+                                        
                 }
             }
         }
@@ -76,6 +79,7 @@ header{position: fixed; top: 0; left: 0; background-color: transparent; padding:
     .hamburger.active span:before, .hamburger.active span:after{top: 0;}
     .hamburger.active span:before {transform: rotate(45deg);}
     .hamburger.active span:after {transform: translateY(-10px) rotate(-45deg); top: 10px;}
+    
 }
 /* header end here */
 

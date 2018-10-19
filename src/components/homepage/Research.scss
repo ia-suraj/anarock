@@ -1,6 +1,3 @@
-@import "../../assets/scss/base/mixins";
-@import "../../assets/scss/base/_variables";
-@import "../../assets/scss/base/_global";
 /* research and insights start here */
 .researchInsights{position: relative; z-index: 2;
     .researchInsights_Main{width: 40%; display: inline-block; vertical-align: middle;
@@ -31,7 +28,7 @@
             }
         }
         .knowmore_Btn{float: right; right: 14%; margin-bottom: -100px;}
-        &:after{content: ''; width: 105%; height: 110%; position: absolute; top:-10%; left:-5%; background-color: $colora054a0; z-index: -1;}
+        &:after{content: ''; width: 105%; height: 110%; position: absolute; top:-10%; left:calc(-5% + 2px); background-color: $colora054a0; z-index: -1;}
     }
 }
 .slick-dots li button:before{

@@ -1,6 +1,3 @@
-@import "../../assets/scss/base/mixins";
-@import "../../assets/scss/base/_variables";
-@import "../../assets/scss/base/_global";
 /* projects start here */
 .projectsWrap{position: relative; z-index: 2;
     .h2{@extend .marginBottom50}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import "./Research.css";
+/* import "./Research.css"; */
 
 import researchnews1 from "../../assets/images/researchInsights.jpg";
 

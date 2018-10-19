@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./appheader.css";
+/* import "./appheader.css"; */
 import logo from "../../assets/images/Anarock-logo.svg";
 
 class AppHeader extends Component {
   render() {
     return (
-      <header className="wrapper" ref="navbar">
+      <header className="wrapper" ref="navbar" id="header">
         <div className="container">
           <a href="javascript:void(0)" className="logoWrap">
             <img src={logo} alt="" />

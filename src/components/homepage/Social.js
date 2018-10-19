@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Scrollbars } from "react-custom-scrollbars";
 
-import "./Social.css";
+/* import "./Social.css"; */
 
 import twitterIcon2 from "../../assets/images/twitterIcon2.png";
 import twitterIcon from "../../assets/images/twitterIcon.png";
@@ -119,7 +119,7 @@ export default class Social extends Component {
           <div className="video_Main">
             <img src={lifeatvideo1} alt="" className="videoBg" />
             <a
-              href="vG-3fpLqFaw"
+              href="javascript:void(0)"
               className="playIcon"
               onClick={this.playVideo.bind(this, "vG-3fpLqFaw")}
             >
@@ -137,15 +137,10 @@ export default class Social extends Component {
       </section>
     );
   }
-  playVideo = (e, hrefval) => {
+  playVideo = hrefval => {
     document.querySelector(".videoPopupWrapper").classList.add("active");
     var videoUrl = hrefval;
-    document
-      .querySelector("#iframeVideo")
-      .innerHTML(
-        '<iframe src="https://www.youtube.com/embed/' +
-          videoUrl +
-          '?autoplay=1&rel=0" frameborder="0" allowfullscreen></iframe>'
-      );
+    const aaa = `https://www.youtube.com/embed/${videoUrl}?autoplay=1&rel=0`;
+    document.getElementById("anarock_video").setAttribute("src", aaa);
   };
 }

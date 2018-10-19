@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import "./Partners.css";
+/* import "./Partners.css"; */
 
 import partners1 from "../../assets/images/partners1.jpg";
 import partners2 from "../../assets/images/partners2.jpg";
