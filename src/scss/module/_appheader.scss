@@ -1,0 +1,155 @@
+/* header start here */
+
+.arrowBtn{width: 28px; height: 14px; background-image: url(../assets/images/rightArrow.png) !important }; 
+header{position: fixed; top: 0; left: 0; background-color: transparent; padding: 18px 0 0; z-index:4;/*  display: none; */
+    &.sticky-header{
+        background-color: white !important;
+        
+        .container{
+            padding: 0px 15px 5px;
+        }
+    }
+    .logoWrap{width: 220px; float: left; padding-top: 12px;}
+    nav{width:calc(100% - 220px); float: right; font-family: $font-ceraRegular;
+        .firstNav{
+            ul{width: auto; float: right;
+                li{margin: 0 10px;
+                    a{text-transform: uppercase; cursor: pointer; @extend .anim2; position: relative; font-size: 13px; line-height: 21px;
+                        &:after{content:''; width:0px; height: 3px; background-color: $orange; position: absolute; bottom:-20px; left: 0; @extend .anim2;}
+                        &:hover{color:$orange;
+                            &:after{width: 30px;}
+                        }
+                    }
+                    select{cursor: pointer; text-transform: uppercase; padding: 0; font-family: $font-ceraRegular; -webkit-appearance: none; -ms-expand:none; -moz-appearance: none; -ms-appearance: none; appearance: none; padding-right: 22px; background-image: url(../assets/images/downArrow.png); background-repeat: no-repeat; background-position: right center; width: 62px; font-size: 13px; line-height: 24px; position: relative; top: 2px; background-color: transparent;}
+                    &:last-child{margin-right: 0}
+                }
+            }
+        }
+        .secondNav{margin: 20px 0 0;
+            .searchIcon{width: 22px; height: 22px; float: right; background-image: url(../assets/images/searchIcon.png); background-repeat: no-repeat; margin-left:10px; position: relative; top: 2px; cursor: pointer;}
+            ul{width: auto; float: right;
+                li{margin: 0 10px; position: relative; padding: 0;
+                    a{text-transform: uppercase; cursor: pointer; @extend .anim2; position: relative; font-family: $font-ceraMedium; padding: 0 0 18px;
+                        &:after{content:''; width:0px; height: 3px; background-color: $orange; position: absolute; bottom:0px; left: 0; @extend .anim2;}
+                    }
+                    .innerNav{width: 950px; height: auto; background-color: $white; position: absolute; top:45px; left: -300px; -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.5); box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.5); transform-origin: 50% 0 0; -moz-transform-origin: 50% 0 0; -ms-transform-origin: 50% 0 0; -o-transform-origin: 50% 0 0; -webkit-transform-origin: 50% 0 0; transform: rotateX(-90deg); -moz-transform: rotateX(-90deg); -ms-transform: rotateX(-90deg); -o-transform: rotateX(-90deg); -webkit-transform: rotateX(-90deg); opacity: 0; padding: 30px 40px; @extend .anim2;
+                        ul{width:calc(34% - 10px); float: none; display: inline-block; vertical-align: top; margin: 10px 0; padding: 0 10px;
+                            li{padding: 0; width: 100%; float: left; margin: 6px 0;
+                                a{text-transform: capitalize; width: 100%; float: left; font-family: $font-ceraRegular; color: $grey; font-size: 14px; padding: 0;
+                                    strong{font-weight: normal; font-family: $font-ceraMedium; color: $black; font-size: 16px; @extend .anim2;}
+                                    &:after{display: none;}
+                                }
+                                &:hover{
+                                    a{color:$orange;
+                                        strong{color:$orange;}
+                                    }
+                                }
+                                &:last-child{margin-bottom: 0}
+                                &:first-child{margin-top: 0}
+                            }
+                        }
+                    } 
+                    
+                    &:hover{
+                        a{color:$orange;
+                            &:after{width: 30px;}
+                        }
+                        .innerNav{transform: rotateX(0deg); -moz-transform: rotateX(0deg); -ms-transform: rotateX(0deg); -o-transform: rotateX(0deg); -webkit-transform: rotateX(0deg); opacity: 1;}
+                    }
+                    &.mobileLink{display: none;}
+                    
+                    .plusWrap{width: 20px; height: 20px; position: absolute; top: 20px; transform: translateY(-50%); right:10px; display: none; cursor: pointer;
+                        &:before{content:''; width: 2px; height: 100%; background-color: #000; position: absolute; top:0; left: 50%; transform: translateX(-50%); transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;}
+                        &:after{content:''; width: 100%; height: 2px; background-color: #000; position: absolute; top: 50%; transform: translateY(-50%); left: 0;}
+                        &.minusWrap{
+                            &:before{transform: translateX(-50%) rotate(90deg); }
+                        }
+                    }
+                                        
+                }
+            }
+        }
+    }
+    .hamburger {position: absolute; left: auto; top: 5px; right: 15px; cursor: pointer; padding: 8px 28px 8px 0px; display: none;}
+    .hamburger span, .hamburger span:before, .hamburger span:after {content: ''; cursor: pointer; border-radius: 1px; height: 2px; width: 28px; background: #631b75; position: absolute; display: inline-block;}
+    .hamburger span:before {top: -8px; }
+    .hamburger span:after {bottom: -8px;}
+    .hamburger span, .hamburger span:before, .hamburger span:after {-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); -moz-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); -o-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000); transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);}
+    .hamburger.active span {background-color: transparent;}
+    .hamburger.active span:before, .hamburger.active span:after{top: 0;}
+    .hamburger.active span:before {transform: rotate(45deg);}
+    .hamburger.active span:after {transform: translateY(-10px) rotate(-45deg); top: 10px;}
+    
+}
+/* header end here */
+
+
+@media screen and (max-width: 1440px){
+   /*  .container{max-width: 1170px;} */
+    header .logoWrap{max-width: 160px;}
+}
+
+@media screen and (max-width: 991px){
+    header{padding:10px 0;
+        nav{width: 94px; margin-right: 36px; padding-right: 36px; position: relative; top: 5px;
+        .firstNav{
+            ul{
+                li{display: none;
+                    a{
+                        &:after{}
+                        &:hover{
+                            &:after{}
+                        }
+                    }
+                    select{}
+                    &:last-child{display: inline-block;}
+                }
+            }
+        }
+        .secondNav{margin: 0;
+            .searchIcon{position: absolute; top: 0; right: 0;}
+            ul{
+                &.mobileNav{width: 100%; position: fixed; top: 40px; right: -115%; height: calc(100vh - 40px); background-color: #fff; overflow: auto; transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;
+                    &.open{right: 0;}
+                }
+                li{width: 100%; margin: 0;
+                    a{padding:8px 10px; display: inline-block; width: 100%;
+                        &:after{display: none;}
+                    }
+                    .innerNav{opacity: 1; transform: rotateX(0deg); position: relative; width: 100%; left: 0; padding:0; top: 0; box-shadow:none; display: none;
+                        ul{width: 100%;
+                            li{
+                                a{
+                                    strong{}
+                                    &:after{}
+                                }
+                                &:hover{
+                                    a{
+                                        strong{}
+                                    }
+                                }
+                                &:last-child{}
+                                &:first-child{}
+                            }
+                        }
+                    } 
+                    
+                    &:hover{
+                        a{
+                            &:after{}
+                        }
+                        .innerNav{}
+                    }
+                    &.mobileLink{display: inline-block;}
+                    &:last-child{margin-bottom: 20px;}
+                    .plusWrap{display: inline-block;}
+                     
+                }
+            }
+        }
+    }
+        .hamburger{display: inline-block}
+        .logoWrap{padding: 0; max-width: 120px;}
+    }
+    
+}

@@ -1,0 +1,66 @@
+.c-purple-block{
+    position: relative;
+    clear: both;
+    
+    &:after{
+        background-color: $colora054a0;
+        width: 20%;
+        height: 50%;
+        content: "";
+        position: absolute;
+        top: -13px;
+        left: -12px;
+        z-index: -1;
+    }
+    &.c-small-purple-block{
+        &:after{
+            width: 20%;
+            height: 50%;
+        }
+    }
+    &.c-medium-purple-block{
+        &:after{
+            width: 50%;
+            height: 70%;
+        }
+    }
+    &.c-big-purple-block{
+        &:after{
+            width: 80%;
+            height: 80%;
+        }
+    }
+    &.c-left-top-purple-block{
+        &:after{
+            top: -13px;
+            left: -12px;
+            right: auto;
+            bottom: auto;
+        }
+    }
+    &.c-left-bottom-purple-block{
+        &:after{
+            bottom: -13px;
+            left: -12px;
+            right: auto;
+            top: auto;
+        }
+    }
+    &.c-right-top-purple-block{
+        &:after{
+            top: -13px;
+            right: -12px;
+            left: auto;
+            bottom: auto;
+        }
+    }
+    &.c-right-bottom-purple-block{
+        &:after{
+            bottom: -13px;
+            right: -12px;
+            left: auto;
+            top: auto;
+        }
+    }
+    
+}

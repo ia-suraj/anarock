@@ -85,7 +85,7 @@ export default class Partners extends Component {
     return (
       <section className="wrapper partners_testimonials">
         <div className="partners">
-          <h2 className="h2 underlineOrange">partners</h2>
+          <h2 className="h2 side-bar">partners</h2>
           <div className="wrappper partnersLogo">
             <ul>
               {partners.map(p => (
@@ -99,7 +99,7 @@ export default class Partners extends Component {
           </div>
         </div>
         <div className="testimonials">
-          <h2 className="h2 underlineOrange">testimonials</h2>
+          <h2 className="h2 side-bar">testimonials</h2>
           <div className="testimonialsWrap">
             <Slider className="wrapper testimonials_Slider" {...settings}>
               {testimonial.map(t => (

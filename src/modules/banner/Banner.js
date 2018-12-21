@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Cta from "../../components/global/cta";
 /* import "./Banner.css"; */
 import banner from "../../assets/images/banner.jpg";
 import banner2 from "../../assets/images/banner2.jpg";
@@ -30,17 +31,6 @@ class Banner extends Component {
     };
   }
 
-  /* componentDidMount() {
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        that.setState({ bannerdetails: data });
-      });
-  }
- */
   render() {
     var settings = {
       dots: true,
@@ -51,12 +41,13 @@ class Banner extends Component {
       slidesToScroll: 1,
       fade: true
     };
+    let bannerdetails1 = this.state.bannerdetails;
     return (
       <section className="wrapper topBanner">
         <Slider className="wrapper topBannerSlider" {...settings}>
-          {bannerdetails.map(b => (
+          {bannerdetails1.map(b => (
             <div className="wrapper colWrap" key={b.id}>
-              <img src={b.img_src} alt="" className="bannerDesktopImg" />
+              <img src={banner} alt="" className="bannerDesktopImg" />
               <div className="container">
                 <div className="contentBox">
                   <h1 className="h1">{b.name}</h1>
@@ -84,9 +75,36 @@ class Banner extends Component {
     );
   }
   componentDidMount() {
+    /* bannerdetails.map(b => {
+      console.log(b);
+    }); */
     document.querySelector(".downArrow").addEventListener("click", function(e) {
-      console.log(e);
+      const hash = document.querySelector(".servicesWrap").offsetTop - 50;
+      console.log(hash);
+      window.scrollTo({
+        top: hash,
+        behavior: "smooth"
+      });
     });
+    fetch("http://localhost:3000/json/bannerdetails.json")
+      .then(r => r.json())
+      .then(json => {
+        // this.db = json;
+        console.log(json);
+        this.setState({ bannerdetails: json });
+        /* const today = new SimpleData(json);
+        var aaa = today.getDay();
+        console.log(aaa); */
+      });
+  }
+}
+
+class SimpleData {
+  constructor(obj1) {
+    this._one = obj1;
+  }
+  getDay() {
+    return this._one[0];
   }
 }
 

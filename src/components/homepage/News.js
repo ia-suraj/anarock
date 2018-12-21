@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import Cta from "../global/cta";
+import OverlayPropertyBox from "../global/overlaypropertybox";
+import BasicDataBox from "../global/basicdatabox";
+import PersonnelBox from "../global/personnelbox";
+import { Bootstrap, Grid, Row, Col } from "react-bootstrap";
 
 /* import "./News.css"; */
 
@@ -87,7 +92,7 @@ export default class News extends Component {
       <section className="wrapper big_featured_News marginTopBottom80">
         <div className="container">
           <div className="bigNews">
-            <h2 className="h2 underlineOrange marginBottom50">Big News</h2>
+            <h2 className="h2 side-bar marginBottom50">Big News</h2>
             <div className="innerWrap">
               <Slider className="bigNews_Slider" {...settings}>
                 {bignews.map(bn => (
@@ -104,7 +109,7 @@ export default class News extends Component {
             </div>
           </div>
           <div className="featuredNews">
-            <h2 className="h2 underlineOrange">FEATURED NEWS</h2>
+            <h2 className="h2 side-bar">FEATURED NEWS</h2>
             <div className="wrapper allNews">
               {featurednews.map(fn => (
                 <div className="colWrap" key={fn.id}>
@@ -123,6 +128,26 @@ export default class News extends Component {
             </a>
           </div>
         </div>
+        {/*  <Cta ctaType="view-all" myTarget="abc.html" myClasses="" />
+        <PersonnelBox
+          personnelName="Anuj Puri"
+          imgSrc={bignews1}
+        /> */}
+        {/* <OverlayPropertyBox
+          propertyType="Retail"
+          propertyName="Metro mall"
+          propertyDetails="Ultimate shopping experience"
+          imgSrc={bignews1}
+          ctaLink="abc.html"
+        />  */}
+        {/*  <BasicDataBox
+          basicDataHeadingPurple=""
+          basicDataHeadingBlack="cbc"
+          basicDataDate="01 march 2018"
+          basicDataLineOne="line one"
+          basicDataLineTwo="line two"
+          ctaLink="abc.html"
+        /> */}
       </section>
     );
   }

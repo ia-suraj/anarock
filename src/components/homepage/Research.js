@@ -86,7 +86,7 @@ export default class Research extends Component {
     return (
       <section className="wrapper researchInsights">
         <div className="researchInsights_Main">
-          <h2 className="h2 underlineOrange">research and insights</h2>
+          <h2 className="h2 side-bar">research and insights</h2>
           <Slider className="wrapper researchInsights_Slider" {...settings}>
             {researchslider.map(rs => (
               <div className="wrapper colWrap" key={rs.id}>

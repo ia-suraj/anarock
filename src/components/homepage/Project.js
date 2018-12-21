@@ -54,7 +54,7 @@ export default class Project extends Component {
     return (
       <section className="wrapper projectsWrap marginTopBottom80">
         <div className="container">
-          <h2 className="h2 underlineOrange">projects</h2>
+          <h2 className="h2 side-bar">projects</h2>
         </div>
         {projectbox.map((rs, index) => {
           return index === 0 ? (

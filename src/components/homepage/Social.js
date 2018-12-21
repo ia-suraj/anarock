@@ -85,7 +85,7 @@ export default class Social extends Component {
     return (
       <section className="wrapper socialFeed_LifeAt marginTopBottom80">
         <div className="socialFeeds">
-          <h2 className="h2 underlineOrange">Social feeds</h2>
+          <h2 className="h2 side-bar">Social feeds</h2>
           <div className="wrapper twitterIcon_FollowBtn">
             <span className="iconTwit">
               <img src={twitterIcon} alt="" />
@@ -115,7 +115,7 @@ export default class Social extends Component {
           </Scrollbars>
         </div>
         <div className="lifeAt">
-          <h2 className="h2 underlineOrange">Life at anarock</h2>
+          <h2 className="h2 side-bar">Life at anarock</h2>
           <div className="video_Main">
             <img src={lifeatvideo1} alt="" className="videoBg" />
             <a

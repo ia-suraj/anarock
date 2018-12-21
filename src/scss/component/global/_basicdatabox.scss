@@ -1,0 +1,23 @@
+.c-basic-data-box{
+    img{
+       width: 100%;
+       margin-bottom: 30px;
+    }
+    .h2{
+        line-height: 30px;
+
+        &.c-basic-data-heading-purple{
+            color: $colora054a0;
+        }
+    }
+    h7{
+        line-height: 20px;
+    }
+    .c-basic-data-line-two{
+        margin-top: 10px;
+    }
+    .c-cta-btn{
+        margin-top: 10px;
+    }
+}
+

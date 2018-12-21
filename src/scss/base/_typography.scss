@@ -1,0 +1,84 @@
+.h1{
+    font-family: $font-ceraMedium;
+	font-size: 36px;
+    color: $colora054a0;
+    font-weight:normal;
+    line-height: 44px;
+    text-transform: uppercase;
+}
+
+.h2{
+    font-family: $font-ceraMedium;
+	font-size: 24px;
+    color: $black;
+    font-weight:normal;
+    line-height: 32px;
+
+    &.side-bar{
+        padding-left: 10px;
+        position: relative;
+        text-transform: uppercase;
+        &:before{
+            content: "";
+            width: 4px;
+            height: 18px;
+            position: absolute;
+            background-color: #a054a0;
+            left: 0px;
+            top: 9px;
+        }
+    }
+    /* &.underlineOrange{position: relative; padding-bottom: 10px;
+        &:after{content: ''; width: 30px; height: 3px; background-color: #f27060; position: absolute; bottom: 0px; left: 0;}
+    } */
+}
+
+.h3{
+    font-family: $font-ceraRegular;
+	font-size: 22px;
+    color: $black;
+    font-weight:normal;
+    line-height: 26px;
+}
+
+.h4{
+    font-family: $font-ceraRegular;
+	font-size: 18px;
+    color: $black;
+    font-weight:normal;
+}
+
+.h5{
+    font-family: $font-ceraMedium;
+	font-size: 18px;
+    color: $colora054a0;
+    font-weight:normal;
+}
+
+.h6{
+    font-family: $font-source;
+	font-size: 18px;
+    color: $colora054a0;
+    font-weight:normal;
+}
+
+.h7{
+    font-family: $font-source;
+	font-size: 16px;
+    color: $black;
+    font-weight:normal;
+}
+
+.h8{
+    font-family: $font-source;
+	font-size: 14px;
+    color: $semilightgray;
+    font-weight:normal;
+}
+
+.h9{
+    font-family: $font-source;
+	font-size: 12px;
+    color: $black;
+    font-weight:normal;
+}

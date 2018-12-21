@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Slider from "react-slick";
 /* import "./Services.css"; */
 import icon1 from "../../assets/images/Residential.png";
 import icon2 from "../../assets/images/Investment_Management.png";
@@ -32,24 +33,24 @@ export default class Services extends Component {
         {
           id: 1,
           name: "Strategic Partners",
-          details: `With our Industry expertise and insights, we provide end to
-        end solutions to help you achieve the goals.`,
+          details:
+            "With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals. With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals. With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals.",
           img_src: services1,
           box_link: ""
         },
         {
           id: 2,
           name: "Strategic Partners",
-          details: `With our Industry expertise and insights, we provide end to
-        end solutions to help you achieve the goals.`,
+          details:
+            "With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals.",
           img_src: services1,
           box_link: ""
         },
         {
           id: 3,
           name: "Strategic Partners",
-          details: `With our Industry expertise and insights, we provide end to
-        end solutions to help you achieve the goals.`,
+          details:
+            "With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals.",
           img_src: services1,
           box_link: ""
         }
@@ -61,6 +62,16 @@ export default class Services extends Component {
     const servicelist = this.state.services_list;
     const serviceblockdetails = this.state.services_block_details;
     const sbdlength = serviceblockdetails.length;
+    var settings = {
+      dots: false,
+      infinite: false,
+      arrows: true,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      adaptiveHeight: true
+    };
 
     return (
       <section className="wrapper servicesWrap">
@@ -69,7 +80,7 @@ export default class Services extends Component {
         </div>
         <div className="wrapper innerServiceWrap">
           <div className="servicesList">
-            <h2 className="h2 underlineOrange">Services</h2>
+            <h2 className="h2 side-bar">Services</h2>
             <div className="wrapper innerList">
               <ul>
                 {servicelist.map((s, index) => {
@@ -120,6 +131,21 @@ export default class Services extends Component {
                 </div>
               );
             })}
+          </div>
+          <div className="targetDiv servicesCarousel active">
+            <div className="innerWrap">
+              <Slider className="" {...settings}>
+                {serviceblockdetails.map(sbds => (
+                  <div className="colWrap" key={sbds.id}>
+                    <img src={sbds.img_src} alt="" />
+                    <div className="wrapper contentWrap">
+                      <h1 className="h1">{sbds.name}</h1>
+                      <h2 className="h2">{sbds.details}</h2>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
       </section>

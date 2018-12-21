@@ -1,0 +1,108 @@
+.c-cta-btn {
+    position: relative;
+    top: 0;
+    transform: none;
+    right: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    clear: both;
+    
+    span{
+        width: 100%;
+        float: left;
+        text-align: center;
+        font-family: $font-ceraMedium;
+        font-size: 16px;
+    }
+    
+    &.c-knowmore-btn{
+        background-color: $orange;
+        color: $white;
+        padding: 10px 10px 42px;
+        height: 100px;
+        width: 80px;
+        span{
+            &.c-cta-btn-text-one:before{
+                content: "Know";
+            }
+            &.c-cta-btn-text-two:before{
+                content: "More";
+            }
+            &.c-cta-btn-plusWrap{
+                display: block;
+                .plusWrap {
+                    width: 12px;
+                    height: 12px;
+                    position: absolute;
+                    top: 80%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    cursor: pointer;
+                    &:before {
+                      content: "";
+                      width: 2px;
+                      height: 100%;
+                      background-color: $white;
+                      position: absolute;
+                      top: 0;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      transition: all 0.5s ease-in-out;
+                      -webkit-transition: all 0.5s ease-in-out;
+                      -ms-transition: all 0.5s ease-in-out;
+                      -moz-transition: all 0.5s ease-in-out;
+                      -o-transition: all 0.5s ease-in-out;
+                    }
+                    &:after {
+                      content: "";
+                      width: 100%;
+                      height: 2px;
+                      background-color: $white;
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      left: 0;
+                    }
+                    &.minusWrap {
+                      &:before {
+                        transform: translateX(-50%) rotate(90deg);
+                      }
+                    }
+                  }
+            }
+        }
+    }
+
+    &.c-viewall-btn{
+        height: 70px;
+        width: 60px;
+        background-color: $orange;
+        color: $white;
+        padding: 10px 10px 42px;
+        span{
+            &.c-cta-btn-text-one:before{
+                content: "View";
+            }
+            &.c-cta-btn-text-two:before{
+                content: "All";
+            }
+            &.c-cta-btn-plusWrap{
+                display: none;
+            }
+        }
+    }
+    
+    &.c-knowmore-link{
+        font-family: $font-source;
+        font-size: 14px;
+        color: $orange;
+        &:before{
+            content: "Know more "
+        }
+        &:after{
+            content: '\276D';
+            font-size: 12px;
+            margin-left: 4px;
+        }
+    }
+}

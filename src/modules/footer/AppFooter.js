@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import socialIcon1 from "../../assets/images/socialIcon1.png";
+import socialIcon2 from "../../assets/images/socialIcon2.png";
+import socialIcon3 from "../../assets/images/socialIcon3.png";
+import socialIcon4 from "../../assets/images/socialIcon4.png";
+import socialIcon5 from "../../assets/images/socialIcon5.png";
 /* import "./AppFooter.css"; */
 
 class AppFooter extends Component {
@@ -7,7 +12,7 @@ class AppFooter extends Component {
       <footer className="wrapper">
         <div className="wrapper footerAll_Links">
           <div className="container">
-            <div className="colWrap">
+            <div className="colWrap services_links">
               <ul>
                 <li>
                   <a href="javascript:void(0)">
@@ -38,11 +43,11 @@ class AppFooter extends Component {
               </ul>
             </div>
 
-            <div className="colWrap">
+            <div className="colWrap projects_links">
               <ul>
                 <li>
                   <a href="javascript:void(0)">
-                    <strong>Anarock Digital</strong>
+                    <strong>Projects</strong>
                   </a>
                 </li>
                 <li>
@@ -75,7 +80,7 @@ class AppFooter extends Component {
               </ul>
             </div>
 
-            <div className="colWrap">
+            <div className="colWrap about_links">
               <ul>
                 <li>
                   <a href="javascript:void(0)">
@@ -106,7 +111,7 @@ class AppFooter extends Component {
               </ul>
             </div>
 
-            <div className="colWrap">
+            <div className="colWrap faq_links">
               <ul>
                 <li>
                   <a href="javascript:void(0)">
@@ -132,31 +137,31 @@ class AppFooter extends Component {
               <ul className="social_allIcon">
                 <li>
                   <a href="javascript:void(0)">
-                    <img src="images/socialIcon1.png" alt="" />
+                    <img src={socialIcon1} alt="" />
                   </a>
                 </li>
 
                 <li>
                   <a href="javascript:void(0)">
-                    <img src="images/socialIcon2.png" alt="" />
+                    <img src={socialIcon2} alt="" />
                   </a>
                 </li>
 
                 <li>
                   <a href="javascript:void(0)">
-                    <img src="images/socialIcon3.png" alt="" />
+                    <img src={socialIcon3} alt="" />
                   </a>
                 </li>
 
                 <li>
                   <a href="javascript:void(0)">
-                    <img src="images/socialIcon4.png" alt="" />
+                    <img src={socialIcon4} alt="" />
                   </a>
                 </li>
 
                 <li>
                   <a href="javascript:void(0)">
-                    <img src="images/socialIcon5.png" alt="" />
+                    <img src={socialIcon5} alt="" />
                   </a>
                 </li>
               </ul>

@@ -5,9 +5,9 @@ import "./App.css";
 /* Modules Import */
 import AppHeader from "./modules/header/AppHeader";
 import Banner from "./modules/banner/Banner";
-import MainContent from "./modules/maincontent/MainContent";
+import MainContent from "./pages/HomePage";
 import AppFooter from "./modules/footer/AppFooter";
-import "./assets/css/main.css";
+import "./css/main.css";
 
 export default class App extends Component {
   render() {
@@ -53,12 +53,10 @@ class IframeVideo extends Component {
             <div id="iframeVideo">
               <iframe
                 src=""
-                frameborder="0"
-                allowfullscreen
+                frameBorder="0"
+                allowFullScreen
                 title="anc"
                 id="anarock_video"
-                frameborder="0"
-                allowfullscreen
               />
               <span className="closeVideo" onClick={this.closethisvideo} />
             </div>

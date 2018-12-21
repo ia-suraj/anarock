@@ -1,13 +1,13 @@
 [
     {
         "id": 1,
-        "name": "Values",
+        "name": "Values over value",
         "detail":
         "Ethics, Integrity, Transparency, Trust and Respect is our core belief.",
-        "img_src": "../src/assets/images/banner.jpg"
+        "img_src": "../assets/images/banner.jpg"
     },
     {
-        "id": 2,
+        "id": 1,
         "name": "Values over value",
         "detail":
         "Ethics, Integrity, Transparency, Trust and Respect is our core belief. Ethics, Integrity, Transparency, Trust and Respect is our core belief.",
