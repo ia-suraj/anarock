@@ -5,6 +5,7 @@ import OverlayPropertyBox from "../global/overlaypropertybox";
 import BasicDataBox from "../global/basicdatabox";
 import PersonnelBox from "../global/personnelbox";
 import { Bootstrap, Grid, Row, Col } from "react-bootstrap";
+import $ from "jquery";
 
 /* import "./News.css"; */
 
@@ -87,7 +88,6 @@ export default class News extends Component {
     };
     const bignews = this.state.big_news;
     const featurednews = this.state.featured_news;
-
     return (
       <section className="wrapper big_featured_News marginTopBottom80">
         <div className="container">
@@ -95,30 +95,13 @@ export default class News extends Component {
             <h2 className="h2 side-bar marginBottom50">Big News</h2>
             <div className="innerWrap">
               <Slider className="bigNews_Slider" {...settings}>
-                {bignews.map(bn => (
-                  <div className="colWrap" key={bn.id}>
-                    <img src={bn.img_src} alt="" />
-                    <div className="wrapper contentWrap">
-                      <span className="date">{bn.date}</span>
-                      <h2 className="h2">{bn.content}</h2>
-                      <a href="javascript:void" className="arrowBtn" />
-                    </div>
-                  </div>
-                ))}
+                {this.setMyNews("bignews")}
               </Slider>
             </div>
           </div>
           <div className="featuredNews">
             <h2 className="h2 side-bar">FEATURED NEWS</h2>
-            <div className="wrapper allNews">
-              {featurednews.map(fn => (
-                <div className="colWrap" key={fn.id}>
-                  <span className="date">{fn.date}</span>
-                  <p>{fn.details}</p>
-                  <a href="javascript:void(0)" className="arrowBtn" />
-                </div>
-              ))}
-            </div>
+            <div className="wrapper allNews">{this.setMyNews("fnews")}</div>
             <a href="javascript:void(0)" className="knowmore_Btn" tabIndex="0">
               <span>View</span>
               <span>All</span>
@@ -150,5 +133,38 @@ export default class News extends Component {
         /> */}
       </section>
     );
+  }
+  setMyNews(newsType) {
+    var bgnews = [],
+      fnews = [];
+    var mynews_list = "";
+    if (this.props.mydata) {
+      mynews_list = this.props.mydata;
+    }
+    $(mynews_list).each(function(index) {
+      mynews_list[index].isbig === true
+        ? bgnews.push(
+            <div className="colWrap" key={index}>
+              <img src={mynews_list[index]["image-url"]} alt="" />
+              <div className="wrapper contentWrap">
+                <span className="date">{mynews_list[index]["date"]}</span>
+                <h2 className="h2">{mynews_list[index]["shorttext"]}</h2>
+                <a href={mynews_list[index]["know-url"]} className="arrowBtn" />
+              </div>
+            </div>
+          )
+        : fnews.push(
+            <div className="colWrap" key={index}>
+              <span className="date">{mynews_list[index]["date"]}</span>
+              <p>{mynews_list[index]["shorttext"]}</p>
+              <a href={mynews_list[index]["know-url"]} className="arrowBtn" />
+            </div>
+          );
+    });
+    if (newsType === "bignews") {
+      return bgnews;
+    } else {
+      return fnews;
+    }
   }
 }

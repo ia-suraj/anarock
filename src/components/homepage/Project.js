@@ -6,6 +6,7 @@ import project1 from "../../assets/images/project1.jpg";
 import project2 from "../../assets/images/project2.jpg";
 import project3 from "../../assets/images/project3.jpg";
 import project4 from "../../assets/images/project4.jpg";
+import $ from "jquery";
 
 export default class Project extends Component {
   constructor() {
@@ -56,34 +57,53 @@ export default class Project extends Component {
         <div className="container">
           <h2 className="h2 side-bar">projects</h2>
         </div>
-        {projectbox.map((rs, index) => {
-          return index === 0 ? (
-            <div className="colWrap40" key={rs.id}>
+        {this.setMyProjects()}
+      </section>
+    );
+  }
+  setMyProjects() {
+    var projects = [];
+    var proj_list = "";
+    if (this.props.mydata) {
+      proj_list = this.props.mydata;
+    }
+    $(proj_list).each(function(index) {
+      index === 0
+        ? projects.push(
+            <div className="colWrap40" key={index}>
               <div className="wrapper innerContent">
-                <img src={rs.img_src} alt="" className="projectImg" />
-                <span className="projectType">{rs.type}</span>
+                <img
+                  src={proj_list[index]["image-url"]}
+                  alt=""
+                  className="projectImg"
+                />
+                <span className="projectType">{proj_list[index]["cat"]}</span>
                 <div className="overlapContent">
-                  <h2 className="h2">{rs.title}</h2>
-                  <p>{rs.content}</p>
-                  <a href="javascript:void(0)" className="arrowBtn" />
+                  <h2 className="h2">{proj_list[index]["title"]}</h2>
+                  <p>{proj_list[index]["shorttext"]}</p>
+                  <a href={proj_list[index]["know-url"]} className="arrowBtn" />
                 </div>
               </div>
             </div>
-          ) : (
-            <div className="colWrap20" key={rs.id}>
+          )
+        : projects.push(
+            <div className="colWrap20" key={index}>
               <div className="wrapper innerContent">
-                <img src={rs.img_src} alt="" className="projectImg" />
-                <span className="projectType">{rs.type}</span>
+                <img
+                  src={proj_list[index]["image-url"]}
+                  alt=""
+                  className="projectImg"
+                />
+                <span className="projectType">{proj_list[index]["cat"]}</span>
                 <div className="overlapContent">
-                  <h2 className="h2">{rs.title}</h2>
-                  <p>{rs.content}</p>
-                  <a href="javascript:void(0)" className="arrowBtn" />
+                  <h2 className="h2">{proj_list[index]["title"]}</h2>
+                  <p>{proj_list[index]["shorttext"]}</p>
+                  <a href={proj_list[index]["know-url"]} className="arrowBtn" />
                 </div>
               </div>
             </div>
           );
-        })}
-      </section>
-    );
+    });
+    return projects;
   }
 }

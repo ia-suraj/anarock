@@ -5,63 +5,18 @@ import icon1 from "../../assets/images/Residential.png";
 import icon2 from "../../assets/images/Investment_Management.png";
 import icon3 from "../../assets/images/Investment_Management.png";
 import services1 from "../../assets/images/services1.jpg";
+import $ from "jquery";
 
 export default class Services extends Component {
   constructor() {
     super();
-    this.state = {
-      services_list: [
-        {
-          id: 1,
-          name: "Residential",
-          img_src: icon1
-        },
-        {
-          id: 2,
-          name: "Investment Management",
-          img_src: icon2
-        },
-        {
-          id: 3,
-          name: "Investment Banking",
-          img_src: icon3
-        }
-      ],
-      service_intro:
-        "ANAROCK Property Consultants Pvt Ltd. is one of India’s leading real estate services company having diversified interest across real estate value chain. ",
-      services_block_details: [
-        {
-          id: 1,
-          name: "Strategic Partners",
-          details:
-            "With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals. With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals. With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals.",
-          img_src: services1,
-          box_link: ""
-        },
-        {
-          id: 2,
-          name: "Strategic Partners",
-          details:
-            "With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals.",
-          img_src: services1,
-          box_link: ""
-        },
-        {
-          id: 3,
-          name: "Strategic Partners",
-          details:
-            "With our Industry expertise and insights, we provide end to end solutions to help you achieve the goals.",
-          img_src: services1,
-          box_link: ""
-        }
-      ]
-    };
+    this.state = {};
   }
-
   render() {
-    const servicelist = this.state.services_list;
+    /* const servicelist = this.state.services_list;
     const serviceblockdetails = this.state.services_block_details;
-    const sbdlength = serviceblockdetails.length;
+    const sbdlength = serviceblockdetails.length; */
+
     var settings = {
       dots: false,
       infinite: false,
@@ -72,7 +27,6 @@ export default class Services extends Component {
       fade: true,
       adaptiveHeight: true
     };
-
     return (
       <section className="wrapper servicesWrap">
         <div className="container">
@@ -82,74 +36,116 @@ export default class Services extends Component {
           <div className="servicesList">
             <h2 className="h2 side-bar">Services</h2>
             <div className="wrapper innerList">
-              <ul>
-                {servicelist.map((s, index) => {
-                  return index === 0 ? (
-                    <li className="showSingle active" target={s.id} key={s.id}>
-                      <a href="javascript:void(0)" className="service_type">
-                        <img src={s.img_src} alt="" />
-                        <span>{s.name}</span>
-                      </a>
-                    </li>
-                  ) : (
-                    <li className="showSingle" target={s.id} key={s.id}>
-                      <a href="javascript:void(0)" className="service_type">
-                        <img src={s.img_src} alt="" />
-                        <span>{s.name}</span>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
+              <ul>{this.setMyServicesList()}</ul>
             </div>
           </div>
           <div id="div1" className="targetDiv servicesColumn active">
-            {serviceblockdetails.map((sbd, index) => {
-              return index + 1 !== sbdlength ? (
-                <div className="colWrap" key={sbd.id}>
-                  <img src={sbd.img_src} alt="" className="serviceImg" />
-                  <span className="overlayBlack" />
-                  <h3 className="h3 stripContent">{sbd.name}</h3>
-                  <div className="overlapContent">
-                    <div className="innerWrap">
-                      <img src="images/servicesIcon1.png" alt="" />
-                      <h3 className="h3">{sbd.name}</h3>
-                      <p>{sbd.details}</p>
-                      <a href="javascript:void(0)" className="arrowBtn" />
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="colWrap colLast" key={sbd.id}>
-                  <img src={sbd.img_src} alt="" className="serviceImg" />
-                  <a href="javascript:void(0)" className="orangeOverlayContent">
-                    <span className="innerContent">
-                      <abbr>View All</abbr>
-                      <em className="plusWrap" />
-                    </span>
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-          <div className="targetDiv servicesCarousel active">
-            <div className="innerWrap">
-              <Slider className="" {...settings}>
-                {serviceblockdetails.map(sbds => (
-                  <div className="colWrap" key={sbds.id}>
-                    <img src={sbds.img_src} alt="" />
-                    <div className="wrapper contentWrap">
-                      <h1 className="h1">{sbds.name}</h1>
-                      <h2 className="h2">{sbds.details}</h2>
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-            </div>
+            {this.setMyServiceBlocks()}
           </div>
         </div>
       </section>
     );
+  }
+
+  setMyServicesList() {
+    var myservices_list = "";
+    var ren = [];
+    if (this.props.mydata) {
+      var services = this.props.mydata;
+      myservices_list = Object.keys(services);
+    }
+    $(myservices_list).each(function(index) {
+      index === 0
+        ? ren.push(
+            <li
+              className="showSingle active"
+              target={index}
+              key={index}
+              data-myblock={myservices_list[index]}
+              onClick={() => {
+                this.setMyServiceBlocks(myservices_list[index]);
+              }}
+            >
+              <a href="javascript:void(0)" className="service_type">
+                {/* <img src={myservices_list[s].img_src} alt="" /> */}
+                <span>{myservices_list[index]}</span>
+              </a>
+            </li>
+          )
+        : ren.push(
+            <li
+              className="showSingle"
+              target={index}
+              key={index}
+              data-myblock={myservices_list[index]}
+              onClick={() => {
+                this.setMyServiceBlocks(myservices_list[index]);
+              }}
+            >
+              <a href="javascript:void(0)" className="service_type">
+                {/* <img src={s.img_src} alt="" /> */}
+                <span>{myservices_list[index]}</span>
+              </a>
+            </li>
+          );
+    });
+    return ren;
+  }
+  setMyServiceBlocks(x) {
+    var myservices = "",
+      firstservice = "",
+      myxvalue = "",
+      firstservices = "";
+    var ren = [];
+    if (this.props.mydata) {
+      myservices = this.props.mydata;
+      firstservices = Object.keys(myservices);
+      firstservice = firstservices[0];
+
+      x === "" || x === undefined || x === null
+        ? (myxvalue = firstservice)
+        : (myxvalue = x);
+      if ($(".showSingle").length) {
+        document.querySelectorAll(".showSingle").classList.remove("active");
+        document
+          .querySelectorAll('data-myblock=["' + myxvalue + '"]')
+          .classList.add("active");
+      }
+
+      var aa = myservices[myxvalue];
+      var amylistlength = aa.length;
+      Object.keys(aa).forEach(item => {
+        ren.push(
+          parseInt(item) + 1 != amylistlength ? (
+            <div className="colWrap" key={item}>
+              <img src={aa[item]["image-url"]} alt="" className="serviceImg" />
+              <span className="overlayBlack" />
+              <h3 className="h3 stripContent">{aa[item].title}</h3>
+              <div className="overlapContent">
+                <div className="innerWrap">
+                  <img src="images/servicesIcon1.png" alt="" />
+                  <h3 className="h3">{aa[item].title}</h3>
+                  <p>{aa[item].shorttext}</p>
+                  <a href="javascript:void(0)" className="arrowBtn" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="colWrap colLast" key={item}>
+              <img src={aa[item]["image-url"]} alt="" className="serviceImg" />
+              <a href="javascript:void(0)" className="orangeOverlayContent">
+                <span className="innerContent">
+                  <abbr>View All</abbr>
+                  <em className="plusWrap" />
+                </span>
+              </a>
+            </div>
+          )
+        );
+      });
+      return ren;
+    } else {
+    }
   }
 
   componentDidMount() {

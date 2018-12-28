@@ -1,0 +1,115 @@
+// media queries
+$xss-width:481px;
+$xs-width: 768px;
+$sm-width: 981px;
+$md-width: 1025px;
+$lg-width: 1920px;
+
+// custom media queries for desktop resolutions
+$custsm-width: 1441px;
+$custmd-width: 1601px;
+$custSD-width: 1280px;
+$custMD-width: 1365px;
+
+//(max-width:480px)
+@mixin xssScreen {
+  @media (max-width: #{$xss-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:481px) and (max-width:767px)
+@mixin xslandScreen {
+  @media (min-width: #{$xss-width}) and (max-width: #{$xs-width - 1px}) {
+    @content;
+  }
+}
+
+//(max-width:767px)
+@mixin xsScreen {
+  @media (max-width: #{$xs-width - 1px}) {
+    @content;
+  }
+}
+//(max-width:767px)
+@mixin bgScreen {
+  @media (min-width: #{$xs-width -1px}) {
+    @content;
+  }
+}
+
+//(min-width:481px) and (max-width:980px)
+@mixin xsmScreen {
+  @media (min-width: #{$xss-width}) and (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:768px) and (max-width:980px)
+@mixin smScreen {
+  @media (min-width: #{$xs-width}) and (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+//(max-width:980px)
+@mixin smmScreen {
+  @media (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:981px) and (max-width:1024px)
+@mixin mdScreen {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin mdmaxScreen{
+  @media (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:1025px) and (max-width1279px)
+@mixin lgScreen {
+  @media (min-width: #{$md-width}) and (max-width: #{$custSD-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:1280px) and (max-width:1366px;)
+@mixin mediumScreen {
+@media (min-width: #{$custSD-width}) and (max-width: #{$custMD-width + 1px}) {
+    @content;
+  }
+}
+
+//(min-width:1367px) and (max-width:1440px)
+@mixin largeMediumScreen{
+  @media (min-width: #{$custMD-width + 2px}) and (max-width: #{$custsm-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:1441px) and (max-width:1600px)
+@mixin customMdScreen {
+  @media (min-width: #{$custsm-width}) and (max-width: #{$custmd-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:1601px) and (max-width:1919px)
+@mixin smxlgScreen {
+  @media (min-width: #{$custmd-width}) and (max-width: #{$lg-width - 1px}) {
+    @content;
+  }
+}
+
+//(min-width:1920px)
+@mixin xlgScreen {
+  @media (min-width: #{$lg-width}) {
+    @content;
+  }
+}

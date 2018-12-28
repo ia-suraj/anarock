@@ -1,0 +1,43 @@
+.internaltopBanner {
+    position: relative;
+    .topBannerSlider {
+        .colWrap{
+            position: relative;
+            .bannerDesktopImg{
+                height: 100vh;
+            }
+            .parallax {
+                  background: url("/src/assets/images/about/aboutbanner.jpg") no-repeat;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  height: 350px;
+                }
+                .container{position: absolute; bottom: 20%; top: auto;z-index: 2;
+                    .contentBox{width: 100%; max-width: 500px; padding: 30px; background-color: $white; opacity: 0.9; float:left; position: relative;
+                        .h1{margin-bottom: 10px;margin-top: 0px;}
+                        p{font-size: 18px;}
+                        .knowmore_Btn{width: 80px; position: absolute; top: 50%; transform: translateY(-50%); right:-40px; background-color:$orange; color: $white; padding: 10px 10px 42px;  @extend .anim2;
+                            span{width: 100%; float: left; text-align: center; font-family: $font-ceraMedium; font-size:16px;
+                                .plusWrap{width: 12px; height: 12px; position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;  @extend .anim2;
+                                    &:before{content:''; width: 2px; height: 100%; background-color:$white; position: absolute; top:0; left: 50%; transform: translateX(-50%); transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;}
+                                    &:after{content:''; width: 100%; height: 2px; background-color:$white; position: absolute; top: 50%; transform: translateY(-50%); left: 0;}
+                                        &.minusWrap{
+                                            &:before{transform: translateX(-50%) rotate(90deg); }
+                                        }
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+    .horizontalLine.firstLine{
+        top: 40%;
+    }
+    .horizontalLine.secondLine{
+        top: 80%;
+    }
+    .horizontalLine.thirdLine, .horizontalLine.fourthLine{
+        display: none;
+    } 
+}

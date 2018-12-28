@@ -8,7 +8,10 @@ img{max-width: 100%};
 .anim1{transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; -ms-transition: all 1s ease-in-out; -moz-transition: all 1s ease-in-out; -o-transition: all 1s ease-in-out;}
 .anim2{transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;}
 .anim3{transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out;}
-
+.sectionmargin{
+    margin-top:50px;
+    margin-bottom:50px;
+}
 ul{width: 100%; float: left;
     li{width: auto; float: left; list-style-type: none;}
 }
@@ -22,7 +25,10 @@ input[type="text"],input[type="email"],select,textarea{width: 100%; float: left;
     &:focus{outline: 0;}
 }
 
-
+.marginTopBottom50{
+    margin-top:50px;
+    margin-bottom: 50px;
+}
 input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder{color:$black;}
 input[type="text"]::-moz-placeholder, input[type="email"]::-moz-placeholder{color:$black;}
 input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder{color:$black;}
@@ -99,3 +105,6 @@ p{font-size: 16px; line-height: 24px; font-family: $font-source; color: $black;}
     }
 }
 /* video popup end here */
+.nopad {
+    padding: 0px;
+}

@@ -10,14 +10,29 @@ export default class Cta extends Component {
           : "c-knowmore-link"
     }
     `;
-    return (
-      <a href={this.props.myTarget} className={_myClasses}>
-        <span className="c-cta-btn-text-one" />
-        <span className="c-cta-btn-text-two" />
-        <span className="c-cta-btn-plusWrap">
-          <abbr class="plusWrap" />
-        </span>
-      </a>
-    );
+    const abc = this.props.myClasses;
+    if (abc.includes("c-cta-lined")) {
+      return (
+        <div className="ctalinedbtn">
+          <a href={this.props.myTarget} className={_myClasses}>
+            <span className="c-cta-btn-text-one" />
+            <span className="c-cta-btn-text-two" />
+            <span className="c-cta-btn-plusWrap">
+              <abbr className="plusWrap" />
+            </span>
+          </a>
+        </div>
+      );
+    } else {
+      return (
+        <a href={this.props.myTarget} className={_myClasses}>
+          <span className="c-cta-btn-text-one" />
+          <span className="c-cta-btn-text-two" />
+          <span className="c-cta-btn-plusWrap">
+            <abbr className="plusWrap" />
+          </span>
+        </a>
+      );
+    }
   }
 }

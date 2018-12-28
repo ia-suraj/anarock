@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Cta from "../../components/global/cta";
+import $ from "jquery";
 /* import "./Banner.css"; */
 import banner from "../../assets/images/banner.jpg";
 import banner2 from "../../assets/images/banner2.jpg";
@@ -41,28 +42,10 @@ class Banner extends Component {
       slidesToScroll: 1,
       fade: true
     };
-    let bannerdetails1 = this.state.bannerdetails;
     return (
       <section className="wrapper topBanner">
         <Slider className="wrapper topBannerSlider" {...settings}>
-          {bannerdetails1.map(b => (
-            <div className="wrapper colWrap" key={b.id}>
-              <img src={banner} alt="" className="bannerDesktopImg" />
-              <div className="container">
-                <div className="contentBox">
-                  <h1 className="h1">{b.name}</h1>
-                  <p>{b.detail}</p>
-                  <a href="javascript:void(0)" className="knowmore_Btn">
-                    <span>Know</span>
-                    <span>More</span>
-                    <span>
-                      <abbr className="plusWrap" />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+          {this.setBanner()}
         </Slider>
 
         <em className="horizontalLine firstLine" />
@@ -74,28 +57,45 @@ class Banner extends Component {
       </section>
     );
   }
+  setBanner() {
+    var b = [];
+    if (this.props.mydata) {
+      var a = this.props.mydata;
+    }
+    $(a).each(function(index) {
+      b.push(
+        <div className="wrapper colWrap" key={index}>
+          <img
+            src={a[index]["image-url"]}
+            alt=""
+            className="bannerDesktopImg"
+          />
+          <div className="container">
+            <div className="contentBox">
+              <h1 className="h1">{a[index].title}</h1>
+              <p>{a[index].shorttext}</p>
+              <a href="a[index]['know-url']" className="knowmore_Btn">
+                <span>Know</span>
+                <span>More</span>
+                <span>
+                  <abbr className="plusWrap" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      );
+    });
+    return b;
+  }
   componentDidMount() {
-    /* bannerdetails.map(b => {
-      console.log(b);
-    }); */
     document.querySelector(".downArrow").addEventListener("click", function(e) {
       const hash = document.querySelector(".servicesWrap").offsetTop - 50;
-      console.log(hash);
       window.scrollTo({
         top: hash,
         behavior: "smooth"
       });
     });
-    fetch("http://localhost:3000/json/bannerdetails.json")
-      .then(r => r.json())
-      .then(json => {
-        // this.db = json;
-        console.log(json);
-        this.setState({ bannerdetails: json });
-        /* const today = new SimpleData(json);
-        var aaa = today.getDay();
-        console.log(aaa); */
-      });
   }
 }
 

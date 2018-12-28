@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-
+import $ from "jquery";
 /* import "./Partners.css"; */
 
 import partners1 from "../../assets/images/partners1.jpg";
@@ -87,35 +87,14 @@ export default class Partners extends Component {
         <div className="partners">
           <h2 className="h2 side-bar">partners</h2>
           <div className="wrappper partnersLogo">
-            <ul>
-              {partners.map(p => (
-                <li key={p.id}>
-                  <span>
-                    <img src={p.img_src} alt="" />
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <ul>{this.setMyPartners()}</ul>
           </div>
         </div>
         <div className="testimonials">
           <h2 className="h2 side-bar">testimonials</h2>
           <div className="testimonialsWrap">
             <Slider className="wrapper testimonials_Slider" {...settings}>
-              {testimonial.map(t => (
-                <div className="colWrap" key={t.id}>
-                  <div className="wrapper imgContent">
-                    <span className="imgWrap">
-                      <img src={t.img_src} alt="" />
-                    </span>
-                    <h2 className="h2 nameWrap">
-                      <abbr>{t.name}</abbr>
-                      <span>{t.company}</span>
-                    </h2>
-                  </div>
-                  <p>{t.details}</p>
-                </div>
-              ))}
+              {this.setMyTestimonials()}
             </Slider>
             <a href="javascript:void(0)" className="knowmore_Btn" tabIndex="0">
               <span>View</span>
@@ -128,5 +107,47 @@ export default class Partners extends Component {
         </div>
       </section>
     );
+  }
+
+  setMyPartners() {
+    var partners = [];
+    var partners_list = "";
+    if (this.props.mypartnerdata) {
+      partners_list = this.props.mypartnerdata;
+    }
+    $(partners_list).each(function(index) {
+      partners.push(
+        <li key={index}>
+          <span>
+            <img src={partners_list[index]["image-url"]} alt="" />
+          </span>
+        </li>
+      );
+    });
+    return partners;
+  }
+  setMyTestimonials() {
+    var testimonials = [];
+    var testimonials_list = "";
+    if (this.props.mytestimonialdata) {
+      testimonials_list = this.props.mytestimonialdata;
+    }
+    $(testimonials_list).each(function(index) {
+      testimonials.push(
+        <div className="colWrap" key={index}>
+          <div className="wrapper imgContent">
+            <span className="imgWrap">
+              <img src={testimonials_list[index]["image-url"]} alt="" />
+            </span>
+            <h2 className="h2 nameWrap">
+              <abbr>{testimonials_list[index]["name"]}</abbr>
+              <span>{testimonials_list[index]["job"]}</span>
+            </h2>
+          </div>
+          <p>{testimonials_list[index]["shortdesc"]}</p>
+        </div>
+      );
+    });
+    return testimonials;
   }
 }

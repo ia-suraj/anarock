@@ -1,74 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import $ from "jquery";
 
 /* import "./Research.css"; */
 
-import researchnews1 from "../../assets/images/researchInsights.jpg";
-
 export default class Research extends Component {
-  constructor() {
-    super();
-    this.state = {
-      research_slider: [
-        {
-          id: 1,
-          date: "September 21, 2018",
-          title: `Yelahanka, Bengaluru - A well-planned residential settlement with immense real estate growth potential`,
-          content: `Yelahanka is home to many defence establishments such as CRPF training school...`,
-          img_src: researchnews1,
-          link_url: ""
-        },
-        {
-          id: 2,
-          date: "September 22, 2018",
-          title: `Yelahanka, Bengaluru - A well-planned residential settlement with immense real estate growth potential`,
-          content: `Housing sales in NCR up 23% in April-June over previous quarter: Anuj Puri
-            Housing sales in NCR up 23% in April-June over previous quarter: Anuj Puri`,
-          img_src: researchnews1,
-          link_url: ""
-        }
-      ],
-      research_boxes: [
-        {
-          id: 1,
-          date: "September 20, 2018",
-          details: `Delay in handover 5.76L homes of Rs.4.6L cr in seven largest cities, says ANAROCK Report`,
-          link_url: ""
-        },
-        {
-          id: 2,
-          date: "September 20, 2018",
-          details: `Delay in handover 5.76L homes of Rs.4.6L cr in seven largest cities, says ANAROCK Report`,
-          link_url: ""
-        },
-        {
-          id: 3,
-          date: "September 20, 2018",
-          details: `Delay in handover 5.76L homes of Rs.4.6L cr in seven largest cities, says ANAROCK Report`,
-          link_url: ""
-        },
-        {
-          id: 4,
-          date: "September 20, 2018",
-          details: `Delay in handover 5.76L homes of Rs.4.6L cr in seven largest cities, says ANAROCK Report`,
-          link_url: ""
-        },
-        {
-          id: 5,
-          date: "September 20, 2018",
-          details: `Delay in handover 5.76L homes of Rs.4.6L cr in seven largest cities, says ANAROCK Report`,
-          link_url: ""
-        },
-        {
-          id: 6,
-          date: "September 20, 2018",
-          details: `Delay in handover 5.76L homes of Rs.4.6L cr in seven largest cities, says ANAROCK Report`,
-          link_url: ""
-        }
-      ]
-    };
-  }
-
   render() {
     var settings = {
       dots: true,
@@ -80,37 +16,17 @@ export default class Research extends Component {
       fade: true,
       adaptiveHeight: true
     };
-    const researchslider = this.state.research_slider;
-    const researchboxes = this.state.research_boxes;
 
     return (
       <section className="wrapper researchInsights">
         <div className="researchInsights_Main">
           <h2 className="h2 side-bar">research and insights</h2>
           <Slider className="wrapper researchInsights_Slider" {...settings}>
-            {researchslider.map(rs => (
-              <div className="wrapper colWrap" key={rs.id}>
-                <img src={rs.img_src} alt="" />
-                <div className="wrapper innerContent">
-                  <span className="date">{rs.date}</span>
-                  <h2 className="h2">{rs.title}</h2>
-                  <p>{rs.content}</p>
-                  <a href="javascript:void(0)" className="arrowBtn" />
-                </div>
-              </div>
-            ))}
+            {this.setMyResearch("bigres")}
           </Slider>
         </div>
         <div className="featuredNews">
-          <div className="wrapper allNews">
-            {researchboxes.map(rb => (
-              <div className="colWrap" key={rb.id}>
-                <span className="date">{rb.date}</span>
-                <p>{rb.details}</p>
-                <a href="javascript:void(0)" className="arrowBtn" />
-              </div>
-            ))}
-          </div>
+          <div className="wrapper allNews">{this.setMyResearch("sres")}</div>
           <a href="javascript:void(0)" className="knowmore_Btn" tabIndex="0">
             <span>View</span>
             <span>All</span>
@@ -121,5 +37,39 @@ export default class Research extends Component {
         </div>
       </section>
     );
+  }
+  setMyResearch(resType) {
+    var bgres = [],
+      sres = [];
+    var myres_list = "";
+    if (this.props.mydata) {
+      myres_list = this.props.mydata;
+    }
+    $(myres_list).each(function(index) {
+      myres_list[index].isbig === true
+        ? bgres.push(
+            <div className="wrapper colWrap" key={index}>
+              <img src={myres_list[index]["image-url"]} alt="" />
+              <div className="wrapper innerContent">
+                <span className="date">{myres_list[index]["date"]}</span>
+                <h2 className="h2">{myres_list[index]["title"]}</h2>
+                <p>{myres_list[index]["shorttext"]}</p>
+                <a href="javascript:void(0)" className="arrowBtn" />
+              </div>
+            </div>
+          )
+        : sres.push(
+            <div className="colWrap" key={index}>
+              <span className="date">{myres_list[index]["date"]}</span>
+              <p>{myres_list[index]["shorttext"]}</p>
+              <a href={myres_list[index]["know-url"]} className="arrowBtn" />
+            </div>
+          );
+    });
+    if (resType === "bigres") {
+      return bgres;
+    } else {
+      return sres;
+    }
   }
 }

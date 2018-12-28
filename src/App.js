@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import $ from "jquery";
 
-/* Modules Import */
 import AppHeader from "./modules/header/AppHeader";
-import Banner from "./modules/banner/Banner";
-import MainContent from "./pages/HomePage";
+import Main from "./modules/maincontent/main";
 import AppFooter from "./modules/footer/AppFooter";
 import "./css/main.css";
+import AboutUs from "./pages/aboutus";
+import ContactUs from "./pages/contactus";
+import FAQ from "./pages/faq";
 
 export default class App extends Component {
   render() {
     return (
       <div>
         <AppHeader />
-        <Banner />
-        <MainContent />
+        <FAQ />
         <AppFooter />
         <IframeVideo />
         <em className="verticleLine firstLine" />

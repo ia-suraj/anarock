@@ -1,0 +1,21 @@
+ul.purplelisting{
+    position: relative;
+    margin-top: 20px;
+    width: auto;
+    li{
+        display: block;
+        float: none;
+        padding-left: 20px;
+         &:before{
+            content:"";
+            width: 7px;
+            height: 7px;
+            background-color: $colora054a0;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            margin-top: 10px;
+        }
+    }
+
+}

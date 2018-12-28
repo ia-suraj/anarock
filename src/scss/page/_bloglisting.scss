@@ -1,0 +1,44 @@
+.bloglisting{
+    .container{
+        .sectionmargin{
+            display: flex;
+            flex-direction: row;
+
+            .image-div{
+                padding:0px;
+            }
+            .content-box{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+                padding: 10% 5%;
+                .c-basic-data-box{
+                   
+                }
+            }
+            &:nth-child(odd){
+
+            }
+            &:nth-child(even){
+                    .image-div{
+                        order:1;
+                        display: flex;
+                        justify-content: flex-end;
+                        &.c-purple-block.c-left-top-purple-block:after{
+                            bottom: -13px;
+                            right: -12px;
+                            left: auto;
+                            top: auto;
+                        }
+                    }
+                    .content-box{
+                        .c-basic-data-box{
+                            text-align: right;
+                        }
+                    }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.breadcrumbwrap{
+  margin-top: 130px;
+}
+.breadcrumb{
+  background-color: transparent;
+  padding: 8px 0;
+  margin-bottom: 0px;
+  font-size: 12px;
+  font-family: 'CeraRegular';
+  li+li{
+    &:before{
+      content: ' \005C';
+      color: #000;
+    }
+  }
+}

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Scrollbars } from "react-custom-scrollbars";
-
+import $ from "jquery";
 /* import "./Social.css"; */
 
 import twitterIcon2 from "../../assets/images/twitterIcon2.png";
 import twitterIcon from "../../assets/images/twitterIcon.png";
 import playIcon from "../../assets/images/playIcon.png";
 import lifeatvideo1 from "../../assets/images/lifeatvideo1.jpg";
+var mCustomScrollbar = require("malihu-custom-scrollbar-plugin");
 
 export default class Social extends Component {
   constructor() {
@@ -117,7 +118,7 @@ export default class Social extends Component {
         <div className="lifeAt">
           <h2 className="h2 side-bar">Life at anarock</h2>
           <div className="video_Main">
-            <img src={lifeatvideo1} alt="" className="videoBg" />
+            {this.setMyli()}
             <a
               href="javascript:void(0)"
               className="playIcon"
@@ -137,10 +138,28 @@ export default class Social extends Component {
       </section>
     );
   }
+  setMyli() {
+    var Li = [];
+    var aa = this.props.myImage;
+    $(aa).each(function(index) {
+      Li.push(
+        <img
+          src={aa[index]["image-url"]}
+          alt=""
+          className="videoBg"
+          key={index}
+        />
+      );
+    });
+    return Li;
+  }
   playVideo = hrefval => {
     document.querySelector(".videoPopupWrapper").classList.add("active");
     var videoUrl = hrefval;
     const aaa = `https://www.youtube.com/embed/${videoUrl}?autoplay=1&rel=0`;
     document.getElementById("anarock_video").setAttribute("src", aaa);
   };
+  componentDidMount() {
+    $(".twitData").mCustomScrollbar({});
+  }
 }

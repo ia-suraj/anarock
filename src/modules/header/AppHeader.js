@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 /* import "./appheader.css"; */
 import logo from "../../assets/images/Anarock-logo.svg";
 
@@ -153,13 +154,13 @@ class AppHeader extends Component {
                   <a href="javascript:void(0)">Research and Insights</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">Blog</a>
+                  <NavLink to="/blog">Blog</NavLink>
                 </li>
                 <li>
                   <a href="javascript:void(0)">Careers</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">About Us</a>
+                  <NavLink to="/aboutus">About Us</NavLink>
                 </li>
                 <li className="mobileLink">
                   <a href="javascript:void(0)">news and media</a>

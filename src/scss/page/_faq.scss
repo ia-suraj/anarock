@@ -1,0 +1,75 @@
+.faqWrapper{
+.faqwrap{
+    .container{
+        .accordian{
+            li.faqlist{
+                padding: 40px 0 0px 0;
+                display: block;
+                float: none;
+                
+                h4{
+                  cursor: pointer;
+                  padding-bottom: 30px;
+                  border-bottom: 1px solid #a054a0;
+                  padding-left: 30px;
+                  position: relative;
+                  font-size: 18px;
+                  font-family: 'CeraMedium';
+                  color: #333;
+                  .plusbtn{
+                      span.pluswrapbtn{
+                        &.down-arrow{
+                          &:before{
+                            content: "";
+                            top: 0px;
+                            left: 10px;
+                            transform: translateX(-50%) rotateZ(-45deg);
+                            width: 1px;
+                          }
+                          &:after{
+                            content: "";
+                            top: 50%;
+                            transform: translateY(-50%) rotateZ(-45deg);
+                            left: -4px;
+                            height: 1px;
+                          }
+                        }
+                        &.up-arrow{
+                          &:before{
+                            content: "";
+                            top: 0px;
+                            left: 10px;
+                            transform: translateX(-50%) rotateZ(45deg);
+                            width: 1px;
+                          }
+                          &:after{
+                            content: "";
+                            top: 50%;
+                            transform: translateY(-50%) rotateZ(45deg);
+                            left: -4px;
+                            height: 1px;
+                          }
+                        }
+                      }
+                  }
+                  
+                }
+                .accordian-container{
+                  display: none;
+                  padding: 0 100px 0 30px;
+                  p{
+                    padding: 0 100px 0 30px;
+                  }
+                }
+                &:first-child{
+                    .accordian-container{
+                        display: block;
+                    }
+                }
+            }
+          }
+    }
+    
+      
+}
+}
